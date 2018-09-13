@@ -1,0 +1,24 @@
+#
+@host = api.github.com
+@contentType = application/json
+@name = prp1277
+###
+
+GET https://{{host}}/users/{{name}} HTTP/1.1
+Content-Type: {{contentType}}
+
+###
+
+GET https://api.iextrading.com/1.0/stock/market/batch?symbols=GOOG,TSLA,MSFT,FB,MDB,PFE,S,&types=news,quote,chart&range=3m&last=10 HTTP/1.1
+Content-Type: {{contentType}}
+
+###
+@types= peers,news,quote,chart
+@range= 3m
+@last= 10
+GET https://api.iextrading.com/1.0/stock/market/batch
+?symbols=msft,mdb,cag,pfe,ndaq
+&types={{types}}
+&range={{range}}
+&last={{last}}
+Content-Type: {{contentType}}
