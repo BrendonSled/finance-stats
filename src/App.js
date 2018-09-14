@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,9 @@ class App extends Component {
   }
 
   handleClick() {
-    console.log("Success!");
+    axios
+      .get("https://api.github.com/users/prp1277")
+      .then(response => this.setState({ username: response.data.name }));
   }
 
   render() {
@@ -21,6 +24,7 @@ class App extends Component {
         <button className="button" onClick={this.handleClick}>
           Click Me!
         </button>
+        <p>{this.state.username}</p>
       </div>
     );
   }
