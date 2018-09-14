@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 
-class App extends Component {
+class Quote extends Component {
   constructor() {
-    super();
+    super(); // this.state.{field}
     this.state = {
       symbol: "",
       companyName: "",
@@ -46,15 +46,19 @@ class App extends Component {
       week52High: "",
       week52Low: "",
       ytdChange: ""
-    }; // `this` gets binded to the button being clicked
+    };
 
     this.handleClick = this.handleClick.bind(this);
   }
-  /** This tells axios what url to `GET` then sets the state
-   *  to be the response that it receives for the username object
+
+  /**
+   *  handleClick() is the event that tells the page to update
+   *  The let statement allows the symbol to be injected into the url
+   *  this.setState{...} are the fields available to render
    */
+
   handleClick() {
-    let symbol = "aapl";
+    let symbol = "msft";
     axios
       .get(`https://api.iextrading.com/1.0/stock/${symbol}/quote`)
       .then(response =>
@@ -103,6 +107,11 @@ class App extends Component {
       );
   }
 
+  /**
+   * This specifies what fields from
+   * above should be rendered on the page
+   */
+
   render() {
     return (
       <div className="button__container">
@@ -125,14 +134,4 @@ class App extends Component {
   }
 }
 
-export default App;
-/**
- * render(){
- * return(
- * <div>
- * <div>Items:</div>
- * { this.state.items.map(item=> { return <div>{http://item.name}</div>}) }
- * </div>
- * );
- * }}
- * */
+export default Quote;

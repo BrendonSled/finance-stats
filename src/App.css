@@ -1,3 +1,8 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .button__container {
   margin-top: 200px;
   text-align: center;
@@ -12,14 +17,9 @@
   width: 200px;
 }
 
-.companyName {
-  font-size: 24px;
-  color: #0000ff;
-}
-
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
+.ResponseContainer {
+  border: 1px solid #bbb;
+  margin: 5px;
 }
 
 .container {
