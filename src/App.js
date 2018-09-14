@@ -6,16 +6,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      username: ""
+      companyName: "",
+      symbol: "",
+      latestPrice: ""
     };
-
+    // `this` gets binded to the button being clicked
     this.handleClick = this.handleClick.bind(this);
   }
-
+  /** This tells axios what url to `GET` then sets the state
+   *  to be the response that it receives for the username object
+   */
   handleClick() {
     axios
-      .get("https://api.github.com/users/prp1277")
-      .then(response => this.setState({ username: response.data.name }));
+      .get("https://api.iextrading.com/1.0/stock/msft/quote")
+      .then(response =>
+        this.setState({
+          companyName: response.data.companyName,
+          symbol: response.data.symbol,
+          latestPrice: response.data.latestPrice
+        })
+      );
   }
 
   render() {
@@ -24,7 +34,11 @@ class App extends Component {
         <button className="button" onClick={this.handleClick}>
           Click Me!
         </button>
-        <p>{this.state.username}</p>
+        <div className="returnContainer">
+          <p className="companyName">{this.state.companyName}</p>
+          <p className="stockSymbol">{this.state.symbol}</p>
+          <p className="latestPrice">{this.state.latestPrice}</p>
+        </div>
       </div>
     );
   }
