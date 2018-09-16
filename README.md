@@ -1,7 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+# Sources Used in This Project
+### [Starter Tutorial](https://hackernoon.com/tutorial-how-to-make-http-requests-in-react-part-3-daa6b31b66be) 
+### [Youtube Example](https://www.youtube.com/watch?v=oQnojIyTXb8&list=WL&index=20&t=0s)
 
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Table of Contents
 
