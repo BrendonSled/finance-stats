@@ -22,7 +22,9 @@ export default class Timer extends React.Component {
 
   render() {
     return (
-      <div className="Timer">Time Since Last Refresh: {this.state.seconds}</div>
+      <div className="Timer">
+        <h3>Time Since Last Refresh: {this.state.seconds}</h3>
+      </div>
     );
   }
 }
