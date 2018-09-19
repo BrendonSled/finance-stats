@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Timer from "./Timer";
 
 export default class Crypto extends React.Component {
   state = {
@@ -19,7 +18,6 @@ export default class Crypto extends React.Component {
   render() {
     return (
       <div className="PageWrapper">
-        <Timer />
         <div className="CryptoContainer">
           <table id="CryptoTable">
             <tr>

@@ -3,11 +3,6 @@ title: README
 date: 2018-09-15
 ---
 
-**Sources Used in This Project**
-
-> [Starter Tutorial](https://hackernoon.com/tutorial-how-to-make-http-requests-in-react-part-3-daa6b31b66be)
- > [Youtube Example](https://www.youtube.com/watch?v=oQnojIyTXb8&list=WL&index=20&t=0s)
-
 # [Finance Stats](https://financestats.netlify.com/)
 
 The purpose of this repository is to create a financial website that mimics those like [RobinHood](https://Robinhood.com) and [IEX Trading](https://iextrading.com) using the [iex API](https://iextrading.com/developer/docs) to fetch real-time data.
@@ -25,6 +20,8 @@ The purpose of this repository is to create a financial website that mimics thos
 ### 2. UI
 
 - [ ] Add Layouts and CSS
+  - Color Palette:
+    App Background Color - #d4d8d4
 - [x] Add Header & Footer
   - [ ] Make them functional
 - [ ] Add images for each sector
@@ -41,3 +38,20 @@ The purpose of this repository is to create a financial website that mimics thos
 - [ ] - News
 - [ ] - Chart
 - [ ] - Key Stats
+
+### Color Palette
+
+|       Item       |     CSS Name     |  Color  |
+| :--------------: | :--------------: | :-----: |
+|       App        | background-color | #d4d8d4 |
+|    App-Header    | background-color | #056303 |
+|    App-title     |      color       | #ffffff |
+| Header-nav links |      color       | #ffffff |
+|      Timer       |      color       |  #000   |
+|     Table th     | background-color | #326ada |
+|     Table th     |      color       | #ffffff |
+|  Table tr(even)  | background-color | #ffffff |
+|  Table tr(odd)   | background-color | #f8f8f8 |
+|  Table tr:hover  | background-color | #eaeaea |
+|    App-Footer    | background-color | #056303 |
+| Footer-nav links |      color       | #ffffff |

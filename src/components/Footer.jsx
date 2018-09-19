@@ -12,8 +12,8 @@ export default class Footer extends React.Component {
               </a>
             </li>
             <li>
-              <a href="/home/" alt="">
-                Another Link
+              <a href="/about/" alt="">
+                About Finance Stats
               </a>
             </li>
             <li>

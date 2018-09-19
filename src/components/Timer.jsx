@@ -23,7 +23,7 @@ export default class Timer extends React.Component {
   render() {
     return (
       <div className="Timer">
-        <h3>Time Since Last Refresh: {this.state.seconds}</h3>
+        <h3>Refreshed {this.state.seconds} seconds ago</h3>
       </div>
     );
   }
