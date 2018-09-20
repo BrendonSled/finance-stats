@@ -3,8 +3,8 @@ import "./App.css";
 import Header from "./constants/Header";
 import Timer from "./constants/Timer";
 import Footer from "./constants/Footer";
-import Quote from "./components/Quote";
-// import Crypto from "./components/Crypto";
+import Crypto from "./components/Crypto";
+// import Quote from "./components/Quote";
 // import Base from "./components/Base";
 
 class App extends Component {
@@ -13,9 +13,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Timer />
+        <Crypto />
         {/* <Base /> */}
-        <Quote />
-        {/* <Crypto /> */}
+        {/* <Quote /> */}
         <Footer />
       </div>
     );
