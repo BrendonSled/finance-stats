@@ -1,0 +1,11 @@
+@endPoint = https://api.iextrading.com/1.0
+@batch = /stock/market/batch?
+@symbols = &symbols=aapl,dis,goog
+@types = &types=quote,news,chart
+@range = &range=3m
+@last = &last=10
+@ContentType = application/json
+
+# BaseURL #
+{{ endPoint }}/{{ batch }}{{ symbols }}{{ types }}{{ range }}{{ last }}
+Content-Type: {{ ContentType }}

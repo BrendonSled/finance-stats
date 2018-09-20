@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Timer from "./components/Timer";
-// import Quote from "./components/Quote";
-import Crypto from "./components/Crypto";
-import Footer from "./components/Footer";
+import Header from "./constants/Header";
+import Timer from "./constants/Timer";
+import Footer from "./constants/Footer";
+import Quote from "./components/Quote";
+// import Crypto from "./components/Crypto";
+// import Base from "./components/Base";
 
 class App extends Component {
   render() {
@@ -12,8 +13,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Timer />
-        {/* <Quote /> */}
-        <Crypto />
+        {/* <Base /> */}
+        <Quote />
+        {/* <Crypto /> */}
         <Footer />
       </div>
     );

@@ -1,46 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
-
-export default class Quote extends React.Component {
-  state = {
-    Tkr: []
-  };
+/**
+ *  This page returns an array of the info
+ *  but I am not able to map them into a table
+ *  like I was able to in /components/crypto
+ */
+export default class Quote extends Component {
+  constructor(props) {
+    super(props);
+    this.state = [];
+  }
 
   componentDidMount() {
-    let sym = `goog,msft`;
-    let types = `quote`;
-    let range = `1m`;
-    let last = `5`;
     axios
-      .get(
-        `https://api.iextrading.com/1.0/stock/market/batch?symbols=${sym}&types=${types}&range=${range}&last=${last}`
-      )
+      .get(`/stock/market/batch?`, {
+        baseURL: `https://api.iextrading.com/1.0`,
+        params: {
+          symbols: `symbols=goog,aapl,msft`,
+          types: `chart`,
+          range: `1m`
+        },
+        transformResponse: [
+          function(data) {
+            return [data];
+          }
+        ]
+      })
       .then(res => {
-        console.log(res.data.sym.quote);
-        this.setState({ Tkr: res.data });
+        console.log(res.data);
+        this.setState({
+          props: [res.data]
+        });
       });
   }
 
   render() {
     return (
       <div className="PageWrapper">
-        <div className="QuoteContainer">
-          <table id="QuoteTable">
-            <tr>
-              <th> Symbol </th>
-              <th> Price / USD </th>
-              <th> Change % </th>
-              <th> Open </th>
-              <th> High </th>
-              <th> Low </th>
-              <th> Close </th>
-            </tr>
-
-            {this.state.Tkr.map(Tkr => (
-              <tr key={Tkr.quote.companyName}>
-                <td>{Tkr.quote.companyName}</td>
+        <div className="Container">
+          <table>
+            <thead>
+              <tr>
+                <td> Props </td>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              <tr>
+                <td>{this.state.props}</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
