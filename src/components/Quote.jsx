@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-/**
- *  This page returns an array of the info
- *  but I am not able to map them into a table
- *  like I was able to in /components/crypto
- */
+
 export default class Quote extends Component {
   constructor(props) {
     super(props);
-    this.state = [];
+    this.state = { props: [] };
   }
 
   componentDidMount() {
